@@ -4,6 +4,8 @@ MotionSpec is a native macOS utility for turning short UI animations into LLM-re
 
 MotionSpec captures a short screen, window, or region recording, extracts useful PNG frames, and builds a prompt that helps an LLM understand the movement, timing, easing, and UI state changes.
 
+<img src="assets/motionspec-demo.png" alt="MotionSpec frame review grid" width="900">
+
 ## Install From This Repository
 
 Requirements: macOS 14 or newer.
