@@ -27,6 +27,14 @@ require_text "hdiutil create" "DMG creation"
 require_text "Applications" "Applications shortcut in DMG"
 require_text "setup_local_signing.sh" "stable local signing setup guidance"
 require_text "Skipping codesign" "unsigned-build guidance"
+require_text 'ICON_SOURCE="$ROOT_DIR/logo.png"' "source icon path"
+require_text "pixelWidth: 1024" "source icon width validation"
+require_text "pixelHeight: 1024" "source icon height validation"
+require_text "sips -z" "icon resizing"
+require_text "iconutil -c icns" "icns compilation"
+require_text 'cp "$ICON_PATH" "$RESOURCES_DIR/MotionSpec.icns"' "icon bundle copy"
+require_text "<key>CFBundleIconFile</key>" "bundle icon declaration"
+require_text "<string>MotionSpec.icns</string>" "bundle icon filename"
 
 if ! grep -Fq "MOTIONSPEC_LOCAL_IDENTITY" "$SETUP_SCRIPT"; then
   echo "Missing local signing identity override in setup_local_signing.sh" >&2
